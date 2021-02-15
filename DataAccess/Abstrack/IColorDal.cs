@@ -3,14 +3,10 @@ using System.Collections.Generic;
 using System.Text;
 using Core.DataAccess;
 using Entities.Concrete;
-using Entities.DTOs;
 
 namespace DataAccess.Abstrack
 {
-   public interface ICarDal:IEntityRepository<Car>
-   {
-       List<CarDetailsDto> GetAllCarDetailsDtos();
-
-
-   }
+ public   interface IColorDal:IEntityRepository<Color>
+    {
+    }
 }

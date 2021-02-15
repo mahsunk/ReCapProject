@@ -2,15 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 using Core.DataAccess;
+using Core.DataAccess.EntityFramework;
+using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
-using Entities.DTOs;
 
 namespace DataAccess.Abstrack
 {
-   public interface ICarDal:IEntityRepository<Car>
-   {
-       List<CarDetailsDto> GetAllCarDetailsDtos();
+   public interface IBrandDal:IEntityRepository<Brand>
+    {
 
-
-   }
+    }
 }
