@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Runtime.InteropServices;
 using Business.Concrete;
 using DataAccess.Concrete.EntityFramework;
@@ -13,6 +14,10 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
+            string createGuidFile = Guid.NewGuid().ToString() + ".jpeg";
+            string path = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).FullName + @"\Images");
+
+            Console.WriteLine();
             //BrandManager brandManager = new BrandManager(new EfBrandDal());
             //brandManager.Add(new Brand { BrandName = "Fiat" });
 
@@ -41,21 +46,21 @@ namespace ConsoleUI
             //      Console.WriteLine(result.Message);
             //      Console.WriteLine(customerManager.GetById(2).Data.CompanyName);
             //  }
-            RentalManager rentalManager = new RentalManager(new EfRentalDal());
-            Rental rental = new Rental();
-            rental.CarId = 2;
-            rental.CustomerId = 2;
-            rental.RentDate = DateTime.Now;
-            rental.ReturnDate = null;
-            var result = rentalManager.Add(rental);
-            if (result.Success)
-            {
-                Console.WriteLine(result.Message);
-            }
-            else
-            {
-                Console.WriteLine(result.Message);
-            }
+            //RentalManager rentalManager = new RentalManager(new EfRentalDal());
+            //Rental rental = new Rental();
+            //rental.CarId = 2;
+            //rental.CustomerId = 2;
+            //rental.RentDate = DateTime.Now;
+            //rental.ReturnDate = null;
+            //var result = rentalManager.Add(rental);
+            //if (result.Success)
+            //{
+            //    Console.WriteLine(result.Message);
+            //}
+            //else
+            //{
+            //    Console.WriteLine(result.Message);
+            //}
 
         }
 

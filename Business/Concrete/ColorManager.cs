@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Business.Abstrack;
+using Business.BusinessAspects.Autofac;
 using Business.Constants;
 using Core.Utilities.Result;
 using DataAccess.Abstrack;
@@ -29,7 +30,7 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<Color>(_colorDal.Get(c => c.ColorId == colorId));  
         }
-
+        [SecuredOperation("color.add,admin")]
         public IResult Add(Color color)
         {
             _colorDal.Add(color);
